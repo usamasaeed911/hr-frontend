@@ -350,6 +350,18 @@ function App() {
     };
   }, []);
 
+  async function handleInstallClick() {
+    if (!deferredPrompt) return;
+    
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    
+    if (outcome === 'accepted') {
+      setShowInstallButton(false);
+    }
+    setDeferredPrompt(null);
+  }
+
   async function loadProfile(userId) {
     try {
       const data = await api.get('/api/auth/me');
