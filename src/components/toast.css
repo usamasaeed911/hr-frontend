@@ -1,0 +1,244 @@
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast-message {
+  background: var(--surface);
+  border-left: 4px solid;
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-lg);
+  animation: slideIn 0.3s ease;
+  min-width: 280px;
+}
+
+.toast-message span:first-of-type {
+  flex-shrink: 0;
+}
+
+.toast-message span:last-of-type {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 4px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Confirm Dialog */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.confirm-dialog {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: var(--shadow-xl);
+}
+
+.confirm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.confirm-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.confirm-dialog h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+}
+
+.confirm-dialog p {
+  margin: 0 0 24px 0;
+  color: var(--text-secondary);
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.confirm-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.confirm-btn-cancel {
+  background: var(--border);
+  color: var(--text-primary);
+}
+
+.confirm-btn-confirm {
+  color: white;
+}
+
+/* Forgot Password Modal */
+.forgot-password-modal {
+  max-width: 440px;
+}
+
+.password-reset-sent {
+  text-align: center;
+  padding: 20px;
+}
+
+.password-reset-sent svg {
+  margin-bottom: 16px;
+}
+
+/* Backup Manager */
+.backup-manager {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.backup-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.backup-stats .stat {
+  text-align: center;
+}
+
+.backup-stats .stat span {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.backup-stats .stat strong {
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+.backup-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.backup-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 8px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.backup-create {
+  background: var(--primary);
+  color: white;
+  border: 0;
+}
+
+.backup-note {
+  display: flex;
+  gap: 8px;
+  color: #b45309;
+  background: #fffbeb;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.cloud-backup-section {
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.cloud-backup-section .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cloud-list {
+  display: grid;
+  gap: 8px;
+}
+
+.cloud-item {
+  background: #f1f5f9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.cloud-item a { color: var(--primary); }
